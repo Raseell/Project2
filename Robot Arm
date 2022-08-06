@@ -1,0 +1,27 @@
+- install Ros on Ubuntu
+- add the package to src by typing:
+  $ cd ~/catkin_ws/src
+  $ sudo apt install git
+  $ git clone https://github.com/smart-methods/arduino_robot_arm
+- install the dependecies by typing:
+  $ cd ~/catkin_ws
+  $ rosdep install --from-paths src --ignore-src -r -y
+  $ sudo apt-get install ros-melodic-moveit
+  $ sudo apt-get install ros-melodic-joint-state-publisher ros-melodic-joint-state-publisher-gui
+  $ sudo apt-get install ros-melodic-gazebo-ros-control joint-state-publisher
+  $ sudo apt-get install ros-melodic-ros-controllers ros-melodic-ros-control
+compile the package by typing:
+  $ catkin_make
+control the motors in Rviz by typing:
+  $ roslaunch robot_arm_pkg check_motors.launch
+- install Gazebo by typing:
+  $ roslaunch robot_arm_pkg check_motors.launch
+  $ roslaunch robot_arm_pkg check_motors_gazebo.launch
+  $ rosrun robot_arm_pkg joint_states_to_gazebo.py
+create the manipulation in Rviz by typing:
+  $ roslaunch moveit_setup_assistant setup_assistant.launch
+then run Movelt in Rviz by typing:
+  $ roslaunch moveit_pkg demo.launch
+launch Moveit in Gazebo by typing: 
+  $ roslaunch moveit_pkg demo_gazebo.launch 
+  
